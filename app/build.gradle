@@ -1,14 +1,12 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 29
-    buildToolsVersion "29.0.3"
+    compileSdkVersion 31
     defaultConfig {
         applicationId "com.wwt.android.itemlist"
         minSdkVersion 23
-        targetSdkVersion 29
+        targetSdkVersion 31
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -33,28 +31,32 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation "androidx.appcompat:appcompat:1.1.0"
-    implementation "androidx.core:core-ktx:1.3.0"
-    implementation "androidx.constraintlayout:constraintlayout:1.1.3"
-    implementation "com.google.android.material:material:1.1.0"
+    implementation "androidx.appcompat:appcompat:1.4.1"
+    implementation "androidx.core:core-ktx:1.7.0"
+    implementation "androidx.constraintlayout:constraintlayout:2.1.3"
+    implementation "com.google.android.material:material:1.5.0"
     implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
 
     implementation "org.koin:koin-android:2.1.5"
     implementation "org.koin:koin-androidx-scope:2.1.5"
     implementation "org.koin:koin-androidx-viewmodel:2.1.5"
 
-    testImplementation "junit:junit:4.13"
-    testImplementation "androidx.test:core:1.2.0"
-    testImplementation "androidx.test:rules:1.2.0"
-    testImplementation "org.mockito:mockito-core:3.3.3"
-    testImplementation "org.mockito:mockito-inline:3.3.3"
-    testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0"
     testImplementation "org.koin:koin-test:2.1.5"
-    testImplementation "org.robolectric:robolectric:4.3.1"
-    testImplementation "androidx.test.ext:junit:1.1.1"
+    testImplementation "junit:junit:4.13.2"
+    testImplementation "androidx.test:core:1.4.0"
+    testImplementation "androidx.test:rules:1.4.0"
+    testImplementation "androidx.test:core-ktx:1.4.0"
+    testImplementation 'androidx.test:runner:1.4.0'
+    testImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    testImplementation "androidx.test.ext:junit:1.1.3"
+    testImplementation 'io.kotest:kotest-assertions-core:5.1.0'
     testImplementation "android.arch.core:core-testing:1.1.1"
 
-//    testImplementation "androidx.test.espresso:espresso-core:3.2.0"
+    testImplementation "org.mockito:mockito-core:4.3.1"
+    testImplementation "org.mockito:mockito-inline:4.3.1"
+    testImplementation "org.mockito.kotlin:mockito-kotlin:4.0.0"
+    testImplementation "org.robolectric:robolectric:4.6"
+
+    androidTestImplementation "org.mockito:mockito-android:4.3.1"
 }

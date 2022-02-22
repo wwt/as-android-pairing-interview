@@ -14,7 +14,8 @@
         app:layout_constraintEnd_toStartOf="@+id/addButton"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Describe Item Here" />
 
     <Button
         android:id="@+id/addButton"
@@ -33,6 +34,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/newItemInput"
         app:layout_constraintVertical_bias="0"
-        app:layout_constraintVertical_weight="1" />
+        app:layout_constraintVertical_weight="1"
+        tools:listitem="@layout/list_item" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
