@@ -1,7 +1,7 @@
 package com.wwt.android.itemlist
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import org.junit.Assert.assertNotNull
+import io.kotest.matchers.shouldNotBe
 import org.junit.Rule
 import org.junit.Test
 import org.junit.rules.TestRule
@@ -14,6 +14,6 @@ class ItemListViewModelTest {
     fun `Example test`() {
         val testObject = ItemListViewModel()
 
-        assertNotNull(testObject)
+        testObject shouldNotBe null
     }
 }

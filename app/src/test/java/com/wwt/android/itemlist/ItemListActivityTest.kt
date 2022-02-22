@@ -1,8 +1,8 @@
 package com.wwt.android.itemlist
 
-import androidx.test.core.app.ActivityScenario.launch
+import androidx.test.core.app.launchActivity
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import org.junit.Assert.assertNotNull
+import io.kotest.matchers.shouldNotBe
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -27,12 +27,8 @@ class ItemListActivityTest : AutoCloseKoinTest() {
 
     @Test
     fun `Example test`() {
-        var activity: ItemListActivity? = null
-
-        launch(ItemListActivity::class.java).onActivity {
-            activity = it
+        launchActivity<ItemListActivity>().onActivity {
+            it shouldNotBe null
         }
-
-        assertNotNull(activity)
     }
 }
