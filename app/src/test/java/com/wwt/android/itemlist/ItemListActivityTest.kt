@@ -1,5 +1,6 @@
 package com.wwt.android.itemlist
 
+import android.os.Build
 import androidx.test.core.app.launchActivity
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions.click
@@ -18,7 +19,7 @@ import org.koin.test.AutoCloseKoinTest
 import org.robolectric.annotation.Config
 
 @RunWith(AndroidJUnit4::class)
-@Config(sdk = [28])
+@Config(sdk = [Build.VERSION_CODES.P])
 class ItemListActivityTest : AutoCloseKoinTest() {
     private val itemListViewModel: ItemListViewModel = ItemListViewModel()
 
@@ -32,12 +33,13 @@ class ItemListActivityTest : AutoCloseKoinTest() {
     @Test
     fun `should add item and clear input field`() {
         launchActivity<ItemListActivity>().use {
-            onView(withId(R.id.newItemInput)).perform(typeText("New Item"))
+            val title = "Some Item"
+            onView(withId(R.id.newItemInput)).perform(typeText(title))
 
             onView(withId(R.id.addButton)).perform(click())
 
             onView(withId(R.id.newItemInput)).check(matches(withText("")))
-            onView(withId(R.id.itemsRecycler)).check(matches(atPosition(0, hasDescendant(withText("New Item")))))
+            onView(withId(R.id.itemsRecycler)).check(matches(atPosition(0, hasDescendant(withText(title)))))
         }
     }
 }
